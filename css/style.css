@@ -1,0 +1,319 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*, *::before, *::after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus, :active{outline: none;}
+
+a:focus, a:active{outline: none;}
+
+nav, footer, header, aside{display: block;}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input, button, textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1, h2, h3, h4, h5, h6{
+    font-size: inherit;
+    font-weight: 400;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(55deg, rgb(130, 52, 255), rgb(209, 160, 255));
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.iPhone-container{
+    position: relative;
+    width: 460px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+.iPhone-body{
+    position: relative;
+    height: 95%;
+    padding-left: 5%;
+    width: 75%;
+    background: linear-gradient(60deg, rgb(59, 59, 59) 0%, rgb(112, 112, 112) 80%, rgb(165, 165, 165) 100%);
+    border-radius: 40px 30px 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: perspective(1200px) rotateY(30deg);
+    z-index: 2;
+}
+/* .iPhone-body::before{
+    content: '';
+    position: absolute;
+    left: -6%;
+    width: 50px;
+    height: 99%;
+    border-radius: 30px 0 0 30px;
+    background: linear-gradient(60deg, rgb(59, 59, 59) 0%, rgb(112, 112, 112) 80%);
+    transform: perspective(1200px) rotateY(-35deg);
+    z-index: -1;
+} */
+.iPhone-face{
+    height: 98%;
+    width: 96%;
+    background: linear-gradient(60deg, rgb(0, 0, 0) 0%, rgb(36, 36, 36) 80%);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.camera{
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(55deg, rgba(41, 41, 41, 0.5) 0%, rgba(41, 41, 41, 0.5) 45%, rgb(56, 56, 56) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lens{
+    /* border: 1px solid red; */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(55deg, rgba(17, 48, 94, 0.3) 0%, rgba(20, 17, 168, 0.3) 45%, rgba(96, 29, 141, 0.3) 100%) ;
+}
+.speaker {
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18%;
+    height: 1.2%;
+    border-radius: 30px;
+    background: linear-gradient(55deg, rgba(41, 41, 41, 0.5) 0%, rgba(41, 41, 41, 0.5) 45%, rgb(56, 56, 56) 100%) ;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.dot{
+    width: 2px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(29, 29, 29, 0.7);
+}
+.display {
+    width: 90%;
+    height: 76%;
+    /* background: rgba(46, 48, 77, 0.705); */
+    background: linear-gradient(55deg, rgba(48, 25, 85, 0.705) 0%, rgba(29, 52, 73, 0.705) 90%) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.button {
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: 3%;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(55deg, rgb(56, 56, 56) 0%, rgba(24, 24, 24, 0.5) 45%, rgba(20, 20, 20, 0.5) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.icon {
+    width: 20px;
+    height: 20px;
+    outline: 3px solid rgba(14, 97, 206, 0.5);
+    border-radius: 5px;
+    transition: 0.4s;
+}
+.button:hover .icon{
+    outline: 3px solid rgba(14, 97, 206, 0.8);
+}
+.frame{
+    position: absolute;
+    width: 92%;
+    height: 99%;
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    box-shadow: 1px -1px 5px rgba(255, 255, 255, 0.6),
+    -3px 3px 4px inset rgba(145, 145, 145, 0.8),
+    -3px 3px 6px rgba(26, 26, 26, 0.8);
+}
+
+/* Volume Panel */
+
+.volume-panel {
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 20%;
+    left: -0.5%;
+    width: 20px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.vol-btn-body{
+    position: relative;
+    width: 20px;
+    height: 18px;
+    background: linear-gradient(55deg, rgb(37, 37, 37) 0%, rgb(83, 83, 83) 100%);
+    border-radius: 40px;
+}
+.vol-btn {
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(55deg, rgb(59, 59, 59) 0%, rgb(112, 112, 112) 100%);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.vol-btn-body:active{
+    width: 0px;
+    border-radius: 40px;
+}
+.vol-btn-body:active .vol-btn{
+    margin-left: 2px;
+}
+.vol-btn p{
+    font-family: 'Poppins', sans-serif;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 600;
+}
+.rmp{
+    position: absolute;
+    /* display: none; */
+    width: 30%;
+    transform: perspective(1200px) rotateY(30deg);
+}
+.rmp img{
+    width: 100%;
+    opacity: 0.5;
+}
+
+
+@media screen and (max-width: 768px){
+    .iPhone-container{
+        width: 380px;
+        height: 660px;
+    }
+    .camera{
+        width: 16px;
+        height: 16px;
+    }
+    .lens{
+        width: 10px;
+        height: 10px;
+    }
+    .volume-panel{
+        left: -0.5%;
+        width: 16px;
+        height: 80px;
+    }
+    .vol-btn-body{
+        width: 16px;
+        height: 14px;
+    }
+    .vol-btn{
+        width: 16px;
+        height: 16px;
+    }
+    .vol-btn p{
+        font-size: 0.7rem;
+    }
+    .button{
+        width: 38px;
+        height: 38px;
+    }
+    .icon{
+        width: 16px;
+        height: 16px;
+        outline: 2px solid rgba(14, 97, 206, 0.5);
+    }
+    .button:hover .icon{
+        outline: 2px solid rgba(14, 97, 206, 0.8);
+    }
+}
+
+@media screen and (max-width: 576px){
+    .iPhone-container{
+        width: 280px;
+        height: 480px;
+    }
+    .camera{
+        width: 14px;
+        height: 14px;
+    }
+    .lens{
+        width: 8px;
+        height: 8px;
+    }
+    .volume-panel{
+        left: -0.7%;
+        width: 14px;
+        height: 80px;
+    }
+    .vol-btn-body{
+        width: 14px;
+        height: 12px;
+    }
+    .vol-btn{
+        width: 14px;
+        height: 14px;
+    }
+    .vol-btn p{
+        font-size: 0.6rem;
+    }
+    .button{
+        width: 30px;
+        height: 30px;
+    }
+    .icon{
+        width: 14px;
+        height: 14px;
+        outline: 1px solid rgba(14, 97, 206, 0.5);
+    }
+    .button:hover .icon{
+        outline: 1px solid rgba(14, 97, 206, 0.8);
+    }
+}
