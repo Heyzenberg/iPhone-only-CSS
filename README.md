@@ -1,1 +1,1 @@
-# iPhone-only-CSS
+# Smartphone-only-CSS
